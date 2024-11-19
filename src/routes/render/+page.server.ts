@@ -24,6 +24,7 @@ export const actions: Actions = {
         success: false,
         image: "banana",
         script,
+        error: (e as Error).message,
       };
     }
   },

@@ -2,4 +2,10 @@
   export let form;
 </script>
 
-<img src={form?.image} alt="" />
+{#if form}
+  {#if form.error}
+    <h1>{form.error}</h1>
+  {:else}
+    <img src={form.image} alt="" />
+  {/if}
+{/if}

@@ -118,12 +118,15 @@ export class Interpreter {
         }
         break;
       case " ":
+      case "\r":
       case "\n":
         break;
       default:
-      /* throw new Error(
-          `Unknown instruction at ${this.InstructionPointer}: ${instruction}`
-        ); */
+        throw new Error(
+          `Unknown instruction at ${
+            this.InstructionPointer
+          }: "${instruction}" (${instruction.charCodeAt(0)})`
+        );
     }
 
     this.InstructionPointer++;
